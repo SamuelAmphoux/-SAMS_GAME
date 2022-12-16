@@ -16,7 +16,7 @@ class PartiesController < ApplicationController
     # Write method to save party and redirect to party's results
     @party = Party.new(party_params)
     # Implement later code to test if word is actually available
-    @party.available = true
+    @party.available = available?(@party)
     # Implement later code to calculte score
     @party.score = @party.word.chars.count
     @party.game = Game.find(params[:game_id])
@@ -31,5 +31,9 @@ class PartiesController < ApplicationController
 
   def party_params
     params.require(:party).permit(:word, :ten_letters_list, :game_id)
+  end
+
+  def available?(party)
+    party.word.chars.all? { |letter| party.word.count(letter) <= party.ten_letters_list.count(letter) }
   end
 end
