@@ -9,8 +9,10 @@ class PartiesController < ApplicationController
       @letters << ('a'..'z').to_a.reject { |letter| ['a', 'e', 'i', 'o', 'u', 'y'].include?(letter) }[rand(20)]
     end
     @letters.shuffle
+    @party = Party.new
   end
 
   def create
+    # Write method to save party and redirect to party's results
   end
 end
