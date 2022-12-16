@@ -1,0 +1,21 @@
+.grid_card {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.letter {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 4px;
+  border: 0.1rem solid black;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+}
