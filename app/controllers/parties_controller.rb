@@ -35,5 +35,6 @@ class PartiesController < ApplicationController
 
   def available?(party)
     party.word.chars.all? { |letter| party.word.count(letter) <= party.ten_letters_list.count(letter) }
+    # V2 : Test if word is real with api call
   end
 end
