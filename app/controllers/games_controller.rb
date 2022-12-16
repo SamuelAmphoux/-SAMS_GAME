@@ -9,5 +9,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @game = Game.find(params[:id])
+    @party = @game.parties.last
   end
 end

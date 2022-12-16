@@ -1,0 +1,10 @@
+<h1>Current Game Board</h1>
+
+
+<p>The last word you guessed: <%= @party.word %> for <%= @party.score %> points!</p>
+
+<div class="start_button">
+  <%= link_to new_game_party_path(@game) do %>
+    <button>Play gain</button>
+  <% end %>
+</div>
